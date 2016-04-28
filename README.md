@@ -9,3 +9,6 @@
 
 依赖包：
 yum install sysstat 
+
+
+增加V2版本，可以重定向到文件，便于分析
