@@ -4,7 +4,7 @@ count=1
 
 while :
 do
-   res=$(top -b -n 1    | grep "Cpu" |  sed 's/,/ /g')
+   res=$(top -b -d 0.1 -n 3 | grep "Cpu" | tail -n 1 |  sed 's/,/ /g')
    echo ${res} | awk  -v count=${count} \
    '{ if($1 ~ /Cpu/ && ((count)%20 == 1)) {\
          printf "---Time---|---User---|---Sys---|---Nice---|---Idle---|---Wait---|---Hirq---|---Sirq---|---ST---|-Used(%)-\n"; \
